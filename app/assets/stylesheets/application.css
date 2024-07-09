@@ -1,0 +1,50 @@
+/*
+ *= require_self
+ *= require_tree .
+ */
+
+/* Definição de estilos globais */
+body {
+  background-image: url('<%= asset_path("pag_inicial.png") %>');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-align: center; /* Centraliza o conteúdo da página */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: white; /* Cor do texto do botão */
+  text-decoration: none; /* Remove o sublinhado */
+  border-radius: 5px; /* Arredonda os cantos */
+  font-size: 16px; /* Tamanho da fonte */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Cor de fundo do botão ao passar o mouse */
+}

@@ -1,0 +1,109 @@
+/* Reset básico e estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000000; /* Cor de fundo de fallback */
+  background-size: cover;
+  background-repeat: repeat-y;
+  background-position: center center;
+  text-align: center; /* Centraliza o conteúdo da página */
+  display: flex;
+  flex-direction: column; /* Alinha os elementos em coluna */
+  min-height: 100vh; /* Altura mínima da tela inteira */
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 5vh; /* Ajuste conforme necessário */
+  margin-top: 5px; /* Ajuste conforme necessário para aproximar a logo do topo */
+}
+
+.logo {
+  background-image: url('/assets/logo1.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: left;
+  align-items: center; /* Alinha conteúdo à esquerda */
+  height: 130px; /* Ajuste conforme necessário */
+  width: 520px; /* Ajuste conforme necessário */
+}
+
+.sidebar {
+  width: 200px; /* Largura da sidebar */
+  height: 60vh; /* Altura da sidebar, cobre toda a altura da tela */
+  position: fixed; /* Fixa a sidebar na tela */
+  left: 0; /* Alinha a sidebar à esquerda */
+  top: 130px; /* Alinha a sidebar ao topo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 100; /* Garante que a sidebar fique acima do conteúdo principal */
+  background-color: #070707; /* Cor de fundo da sidebar */
+  padding-top: 20px; /* Espaçamento superior */
+}
+
+.sidebar-menu {
+  margin-top: 60px; /* Espaçamento superior */
+}
+
+.menu-item {
+  margin-bottom: 10px; /* Espaçamento inferior entre os itens do menu */
+}
+
+.menu-item a {
+  font-size: 1.2em;
+  display: block; /* Transforma o link em bloco para ocupar a largura total do pai */
+  padding: 10px;
+  color: white; /* Cor do texto do menu */
+  text-decoration: none; /* Remove o sublinhado do link */
+  transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+.menu-item a:hover {
+  background-color: #555; /* Cor de fundo ao passar o mouse */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* Ajuste dinâmico das colunas */
+  gap: 20px; /* Espaçamento entre os itens */
+  margin: 20px auto; /* Centraliza na página */
+  max-width: 900px; /* Largura máxima do grid */
+  padding-left: 220px; /* Largura da sidebar + margem para separar da sidebar */
+  box-sizing: content-box; /* Incluir padding na largura total */
+}
+
+.grid-item {
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  border: 1px solid hsl(0, 0%, 19%);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.grid-item img {
+  max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do container */
+}
+
+.grid-item p {
+  margin-top: 10px; /* Espaçamento superior para o texto */
+  font-size: 16px; /* Tamanho da fonte do texto */
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none; /* Esconder a sidebar em telas menores */
+  }
+
+  .grid-container {
+    padding-left: 20px; /* Reduzir o padding do grid para evitar sobreposição */
+    padding-right: 20px;
+  }
+}
